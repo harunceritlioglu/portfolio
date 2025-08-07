@@ -1,0 +1,117 @@
+body {
+  background: #1C1C1C;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 3000px;
+}
+
+#background-effects {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* tıklanamaz olsun */
+  z-index: 0;
+  overflow: hidden;
+}
+
+.background-line {
+  position: absolute;
+  width: 0.3vw;
+  height: 0.6vh;
+  background-color: rgb(122, 0, 223);
+  opacity: 1;
+  box-shadow: 
+    0 0 5px rgba(149, 20, 255, 0.8),
+    0 0 10px rgba(149, 20, 255, 0.6),
+    0 0 20px rgba(149, 20, 255, 0.4);
+}
+
+@keyframes move-up {
+  0% {
+    height: 0.6vh;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    height: 50vh;
+    transform: translateY(-5vh);
+  }
+  90% {
+    height: 0.6vh;
+    transform: translateY(-95vh);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+}
+
+@keyframes move-down {
+  0% {
+    height: 0.6vh;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    height: 20vh;
+    transform: translateY(5vh);
+  }
+  90% {
+    height: 0.6vh;
+    transform: translateY(95vh);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+}
+
+/* Işıkların arkaplan gibi davranması için */
+.light-1,
+.light-2 {
+  position: fixed; /* sayfaya sabitlenir */
+  z-index: -1;     /* içeriğin arkasında kalır */
+}
+
+/* Sol üstte mor ışık */
+.light-1 {
+  width: 319px;
+  height: 319px;
+  border-radius: 50%;
+  background: #4D00FF;
+  filter: blur(229px);
+  top: 10%;
+  left: 10%;
+}
+
+/* Sağ altta pembe ışık */
+.light-2 {
+  width: 289px;
+  height: 289px;
+  border-radius: 50%;
+  background: #A100FF;
+  filter: blur(246px);
+  bottom: 10%;
+  right: 10%;
+}
+.hello-text{
+    color: #FFF;
+    text-align: center;
+    font-family: "Instrument Sans";
+    font-size: 96px;
+    font-style: normal;
+    text-shadow: 0 0 5px rgba(255,255,255, 0.8),
+    0 0 10px rgba(255,255,255, 0.6),
+    0 0 20px rgba(255,255,255, 0.4);;
+    font-weight: 700;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
+}
